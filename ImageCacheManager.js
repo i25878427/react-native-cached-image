@@ -20,7 +20,7 @@ module.exports = (defaultOptions = {}, urlCache = MemoryCache, fs = fsUtils, pat
     _.defaults(defaultOptions, defaultDefaultOptions);
 
     function isCacheable(url) {
-        return _.isString(url) && (_.startsWith(url.toLowerCase(), 'http://') || _.startsWith(url.toLowerCase(), 'https://'));
+        return _.isString(url) && (_.startsWith(url.toLowerCase(), 'http://') || _.startsWith(url.toLowerCase(), 'https://') || _.startsWith(url.toLowerCase(), 'file://'));
     }
 
     function cacheUrl(url, options, getCachedFile) {
